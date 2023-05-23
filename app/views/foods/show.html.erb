@@ -1,2 +1,31 @@
-<h1>Foods#show</h1>
-<p>Find me in app/views/foods/show.html.erb</p>
+<div class="header">
+    <h1>Logged in as: <%= current_user.name %></h1>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure you want to sign out?' } %>
+</div>
+<div class="header">
+    <%= link_to({ controller: "foods", action: "index"}) do %>
+        <%= button_to 'Add Food' %>
+    <% end %>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Maesurment unit</th>
+      <th>Unit Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><%= food.price %></td>
+        <td>
+          <%= link_to 'Delete', food_path(food.id), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

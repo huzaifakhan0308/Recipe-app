@@ -5,7 +5,7 @@ class CreateFoods < ActiveRecord::Migration[7.0]
     create_table :foods do |t|
       t.string :name
       t.string :measurement_unit
-      t.integer :quality, default: 0
+      t.integer :quantity, default: 0
       t.decimal :price, default: 0
       t.references :users, null: false, foreign_key: true
 
