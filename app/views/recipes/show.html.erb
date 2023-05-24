@@ -1,0 +1,32 @@
+<div>
+  <div>
+    <h2> <%=@recipe.name%></h2>
+  </div>
+  <div>
+    <div>
+      <p>Preparation time: <%= @recipe.preparation_time%> hour</p>
+      <p>Cooking time: <%= @recipe.cooking_time%> hour</p>
+      <p>Steps go here...</p>
+    </div>
+    <div>
+      <%= form_with model:[@recipe], url:recipe_path(@recipe.id) do |form| %>
+        <%= form.label :public %>
+        <%= form.check_box :public, checked:@recipe.public %> <br />
+      <%end%>
+    </div>
+  </div>
+  <div>
+    <button>
+      <%= link_to 'Generate shopping list', recipe_path(@recipe.id) %>
+    </button>
+    <button>
+      <%= link_to 'Add ingredient'%>
+    </button>
+  </div>
+  <hr>
+  <div>
+    <%# <div>
+      <%= render "shared/recipe_food"
+    </div> %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<%= form_with model: Food.new, url: foods_path(current_user), method: :post, local: true do |form| %>
+        <li>
+          <%= form.label :name %>
+          <%= form.text_field :name %>
+        </li>
+
+        <li>
+            <%= form.label :measurement_unit %> :
+            <%= form.select :measurement_unit, ['kg', 'g', 'lb', 'oz'] %>
+        </li>
+
+        <li>
+          <%= form.label :quantity %>:
+          <%= form.number_field :quantity %>
+        </li>
+
+        <li>
+          <%= form.label :price %>
+          <%= form.number_field :price %>
+        </li>
+
+        <li class="actions">
+          <%= form.submit "Add food", class: "custom-button" %>
+        </li>
+      <% end %>
