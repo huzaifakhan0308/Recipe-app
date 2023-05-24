@@ -92,6 +92,12 @@ To test the web app run the following command:
 - Twitter: [@huzaifakhan0308](https://twitter.com/home?lang=en)
 - LinkedIn: [huzaifa khan](https://www.linkedin.com/in/huzaifa-khan-938140256/)
 
+👤 **Abdimulhin Adan**
+
+- GitHub: [@AbdimulhinYussuf3675](https://github.com/AbdimulhinYussuf3675)
+- Twitter: [@abdimulhin](https://twitter.com/abdimulhin)
+- LinkedIn: [Abdimulhin Adan](https://github.com/AbdimulhinYussuf3675)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
