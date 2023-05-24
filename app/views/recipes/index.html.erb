@@ -1,0 +1,22 @@
+<h1>Recipes</h1>
+<div>
+    <% @recipe.each_with_index do |recipe,index| %>
+        <div style="border: 2px solid black;">
+            <div>
+                <%= index + 1 %>
+                <div>
+                    <h2><%= link_to recipe.name, recipe_path(recipe.id)  %></h2>
+                    <%# <% if can? :destroy, recipe %>
+                        <%# <button> %>
+                        <%# <%= link_to 'Remove',recipe_path(recipe.id) , data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"
+                                } %> 
+                        <%# </button> %>
+                    <%# <% end %>
+                </div>
+            </div>
+            <p><%= recipe.description%></p>
+        </div>
+    <% end %>
+</div>

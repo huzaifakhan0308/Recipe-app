@@ -3,14 +3,16 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :foods, only: [:index, :show, :create, :destroy]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-    authenticated :user do
-      root 'foods#show', as: :authenticated_root
-    end
+  resources :recipes, only: [:index, :show, :new, :create]
 
-    unauthenticated do
-      root 'recipes#public_recipes', as: :unauthenticated_root
-    end
-  # Defines the root path route ("/")
+  resources :foods, only: [:index, :new, :create, :destroy]
+
+  authenticated :user do
+    root 'recipes#index', as: :authenticated_root
+  end
+
+  unauthenticated :user do
+    root 'recipes#public_recipes', as: :unauthenticated_root
+  end
+
 end

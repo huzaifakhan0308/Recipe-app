@@ -1,0 +1,46 @@
+<%= form_with model: Recipe.new, url: recipes_path(current_user), method: :post, local: true do |form| %>
+  <div >
+    <h3> Add New Recipe </h3>
+    <div>
+      <%= form.label :name  %><br>
+      <%= form.text_field :name %>
+      <% form.object.errors.full_messages_for(:name).each do |message|%>
+        <div><%= message %></div>
+      <%end%>
+    </div>
+    <br>
+    <div>
+      <%= form.label :description%><br>
+      <%= form.text_area :description %>
+      <% form.object.errors.full_messages_for(:description).each do |message|%>
+        <div><%= message %></div>
+      <%end%>
+    </div>
+    <br>
+    <div>
+      <%= form.label :preparation_time_in_hour %><br>
+      <%= form.number_field :preparation_time, step: :any, required:true %>
+      <% form.object.errors.full_messages_for(:preparation_time).each do |message|%>
+        <div><%= message %></div>
+      <%end%>
+    </div>
+    <br>
+    <div>
+      <%= form.label :cooking_time_in_hour%><br>
+      <%= form.number_field :cooking_time, step: :any, required:true %>
+      <% form.object.errors.full_messages_for(:cooking_time).each do |message|%>
+        <div><%= message %></div>
+      <%end%>
+    </div>
+    <br>
+    <div>
+      <%= form.label :public%><br>
+      <%= form.check_box  :public  %>
+      <% form.object.errors.full_messages_for(:public).each do |message|%>
+        <div><%= message %></div>
+      <%end%>
+    </div>
+    <br>
+    <%= form.submit "Create Recipe" %>
+  </div>
+<%end%>
