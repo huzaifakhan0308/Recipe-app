@@ -1,0 +1,80 @@
+.field,
+.actions {
+  padding-bottom: 10px;
+}
+
+.label {
+    font-size: 18px;
+  }
+
+  .input {
+    width: 320px;
+    height: 30px;
+    margin-top: 3px;
+    padding-left: 5px;
+  }
+
+  select {
+    width: 320px;
+    height: 30px;
+    margin-top: 3px;
+    padding-left: 5px;
+  }
+
+  .btn-submit {
+    width: auto;
+    padding: 4px 12px;
+    background-color: rgb(3, 35, 56);
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    border-color: rgb(31, 107, 131);
+  }
+
+  .btn-submit:hover {
+    background-color: white;
+    color: rgb(5, 5, 5);
+  }
+
+  .table_data {
+    height: 40px;
+    font-size: 18px;
+    margin-right: 20px;
+    padding: 10px;
+  }
+
+  #foods {
+    border: 3px solid white;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 70%;
+    padding-top: 10px;
+    font-size: 20px;
+  }
+
+  .add-btn {
+    margin-left: 50%;
+    padding-bottom: 20px;
+  }
+
+  .btn_new_food {
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 6px 12px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(17, 26, 18);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  .btn_new_food:hover {
+    color: rgb(20, 214, 30);
+    background-color: white;
+    border: 2px solid rgb(10, 9, 9);
+    padding: 4.5px 10px;
+    font-size: 20px;
+  }
