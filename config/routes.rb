@@ -3,9 +3,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :recipes, only: [:index, :show, :new, :create]
-
+  resources :recipes, only: [:index, :show, :new, :create] do
+    resources :recipe_foods, only: [:new, :create, :destroy]
+  end
   resources :foods, only: [:index, :new, :create, :destroy]
+
 
   authenticated :user do
     root 'recipes#index', as: :authenticated_root
