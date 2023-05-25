@@ -63,12 +63,3 @@
   list-style: none;
 }
 
-.recipes-title :nth-child(2) {
-  font-size: 22px;
-  margin-top: 10px;
-  text-decoration: none;
-}
-
-.recipes-title a:link {
-  text-decoration: none;
-}
