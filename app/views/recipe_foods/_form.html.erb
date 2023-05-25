@@ -1,0 +1,20 @@
+<%= form_with model:[@recipe, @recipe_food], url:recipe_recipe_foods_path(@recipe.id) do |form| %>
+  <% if form.object.errors.any? %>
+    <div class="alert alert-danger">
+        <% form.object.errors.full_messages.each do |message| %>
+            <div><%= message.inspect %></div>
+        <% end %>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :Ingedients %>
+    <%= form.collection_select :food_id, @current_user.foods , :id, :name, {prompt: "Select Ingedient"}, {class: "form-select"} %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, step: :any, required:true, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit 'Add ingredient', class: "btn btn-primary bg-gradient"%>
+  </div>
+<%end%>
