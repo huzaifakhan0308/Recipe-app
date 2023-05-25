@@ -1,32 +1,20 @@
-<div>
-  <div>
-    <h2> <%=@recipe.name%></h2>
+<div class="recipe-container">
+  <div class="food-title">Recipe <%= @recipe.id%> </div>
+  <%= render @recipe%>
   </div>
-  <div>
-    <div>
-      <p>Preparation time: <%= @recipe.preparation_time%> hour</p>
-      <p>Cooking time: <%= @recipe.cooking_time%> hour</p>
-      <p>Steps go here...</p>
-    </div>
-    <div>
-      <%= form_with model:[@recipe], url:recipe_path(@recipe.id) do |form| %>
-        <%= form.label :public %>
-        <%= form.check_box :public, checked:@recipe.public %> <br />
-      <%end%>
-    </div>
-  </div>
-  <div>
-    <button>
+  <div class="recipe-link">
       <%= link_to 'Generate shopping list', recipe_path(@recipe.id) %>
-    </button>
-    <button>
-      <%= link_to 'Add ingredient'%>
-    </button>
+
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id)%>
   </div>
   <hr>
-  <div>
-    <%# <div>
-      <%= render "shared/recipe_food"
-    </div> %>
-  </div>
+
+  <table id="foods">
+  <tr class= "table-heading">
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <th>Actions</th>
+  </tr>
+</table>
 </div>

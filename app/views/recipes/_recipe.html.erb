@@ -1,0 +1,25 @@
+  <div id="recipe-details">
+    <div class="details">
+      <p>
+        <strong>Name:</strong>
+        <%=@recipe.name%>
+      </p>
+      <p>
+        <strong>Preparation time:</strong>
+        <%= @recipe.preparation_time%> hrs
+      </p>
+      <p>
+        <strong>Cooking time:</strong>
+        <%= @recipe.cooking_time%> hrs
+      </p>
+      <p>
+         <strong>Follow these steps:</strong>
+      </p>
+    </div>
+    <div class="checkbox">
+      <%= form_with model:[@recipe], url:recipe_path(@recipe.id) do |form| %>
+        <%= form.label :public %>
+        <%= form.check_box :public, checked:@recipe.public %> <br />
+      <%end%>
+    </div>
+</div>
