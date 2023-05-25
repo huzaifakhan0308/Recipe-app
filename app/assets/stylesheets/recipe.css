@@ -1,0 +1,74 @@
+.public_recipes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid rgb(14, 11, 11);
+  width: 70%;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.food_title {
+  font-family: "Philosopher", sans-serif;
+  margin: 40px auto 20px auto;
+  font-size: 40px;
+}
+
+.recipe_name > li {
+  font-size: 30px;
+  font-family: "Philosopher", sans-serif;
+  list-style: none;
+}
+
+.recipe_name :nth-child(2) {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.recipe_total > li {
+  font-size: 22px;
+  font-family: "Philosopher", sans-serif;
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+.recipes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid rgb(14, 11, 11);
+  width: 70%;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.recipes-desc > li {
+  font-size: 22px;
+  font-family: "Philosopher", sans-serif;
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+.recipes-title > li {
+  font-size: 30px;
+  font-family: "Philosopher", sans-serif;
+  list-style: none;
+}
+
+.recipes-title :nth-child(2) {
+  font-size: 22px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.recipes-title a:link {
+  text-decoration: none;
+}

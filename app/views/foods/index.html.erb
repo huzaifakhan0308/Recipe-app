@@ -1,24 +1,23 @@
-<div class="header">
+<div class="add-btn">
     <%= link_to({ controller: "foods", action: "new"}) do %>
-        <%= button_to 'Add Food' %>
+        <%= link_to "Add food", new_food_path, class: "btn_new_food" %>
     <% end %>
 </div>
-<table>
-  <thead>
+
+<table id="foods">
     <tr>
       <th>Food</th>
       <th>Maesurment unit</th>
       <th>Unit Price</th>
       <th>Actions</th>
     </tr>
-  </thead>
   <tbody>
     <% @foods.each do |food| %>
       <tr>
-        <td><%= food.name %></td>
-        <td><%= food.measurement_unit %></td>
-        <td><%= food.price %></td>
-        <td>
+        <td class="table_data"><%= food.name %></td>
+        <td class="table_data"><%= food.measurement_unit %></td>
+        <td class="table_data"><%= food.price %></td>
+        <td class="table_data">
           <%= link_to 'Delete', food_path(food.id), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' } %>
         </td>
       </tr>
