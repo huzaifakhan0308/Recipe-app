@@ -4,6 +4,11 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new
   end
 
+  def general_shopping_lists
+    @recipe_food = RecipeFood.includes(:food)
+    @food_count = RecipeFood.select(:food_id).distinct.count
+  end
+
   def create
     @recipe = current_user.recipes.find(params[:recipe_id])
     @recipe_food = RecipeFood.new(recipe_food_params.merge(recipe_id: @recipe.id,
