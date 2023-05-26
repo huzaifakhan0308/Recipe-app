@@ -5,11 +5,14 @@ class FoodsController < ApplicationController
     @foods = current_user.foods
   end
 
-  def show; end
+  def show
+    @foods = current_user.foods
+  end
+
+  def new; end
 
   def create
     @food = current_user.foods.new(food_params)
-    puts @food.inspect
     if @food.save
       flash[:notice] = 'Food was successfully created.'
       redirect_to food_path(@food)
