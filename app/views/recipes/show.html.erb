@@ -1,9 +1,9 @@
 <div class="recipe-container">
-  <div class="food-title">Recipe <%= @recipe.id%> </div>
+  <div class="food-title">Recipe #id <%= @recipe.id%> </div>
   <%= render @recipe%>
   </div>
   <div class="recipe-link">
-      <%= link_to 'Generate shopping list', recipe_path(@recipe.id) %>
+      <%= link_to 'Generate shopping list', general_shopping_lists_path %>
 
       <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id)%>
   </div>
@@ -24,9 +24,12 @@
       <td><%= "#{recipe_food.quantity} #{recipe_food.food.measurement_unit}"%></td>
       <td><%=number_to_currency(recipe_food.food.price * recipe_food.quantity) %></td>
       <td>
-        <button class="btn btn-sm btn-outline-info bg-gradient">
-          Modify
-        </button>
+        <% if can? :destroy, recipe_food %>
+            <%= link_to 'Remove', recipe_recipe_food_path(@recipe.id,recipe_food.id),class: "btn btn-sm btn-outline-danger bg-gradient", data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } %>
+        <% end %>
       </td>
     </tr>
   <%end%>
