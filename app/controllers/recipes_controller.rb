@@ -22,11 +22,11 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-      if @recipe.destroy
-        redirect_to recipe_path, notice: 'Food deleted successfuly'
-      else
-        redirect_to recipe_path, alert: 'Oops something went wrong'
-      end
+    if @recipe.destroy
+      redirect_to recipe_path, notice: 'Food deleted successfuly'
+    else
+      redirect_to recipe_path, alert: 'Oops something went wrong'
+    end
   end
 
   def public_recipes
