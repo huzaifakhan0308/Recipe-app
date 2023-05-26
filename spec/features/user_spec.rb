@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '123456', password_confirmation: '123456',
+    @user = User.create(name: 'Test user', email: 'test444@gmail.com',
+                        password: '123456', password_confirmation: '123456',
                         confirmation_token: nil, confirmed_at: Time.now)
   end
   describe 'sign in page' do
@@ -50,7 +51,8 @@ RSpec.describe 'Users', type: :feature do
       click_link 'Forgot your password?'
       expect(page).to have_content('Forgot your password?')
     end
-    scenario 'when user clicks on dint receive confirmation instructions link it will redirect to confirmation instructions page' do
+    scenario 'when user clicks on dint receive
+    confirmation instructions link it will redirect to confirmation instructions page' do
       visit new_user_session_path
       click_link "Didn't receive confirmation instructions?"
       expect(page).to have_content('Resend confirmation instructions')
