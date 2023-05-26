@@ -29,12 +29,6 @@
         <button class="btn btn-sm btn-outline-info bg-gradient">
           Modify
         </button>
-        <% if can? :destroy, recipe_food %>
-            <%= link_to 'Remove', recipe_recipe_food_path(@recipe.id,recipe_food.id),class: "btn btn-sm btn-outline-danger bg-gradient", data: {
-                          turbo_method: :delete,
-                          turbo_confirm: "Are you sure?"
-                        } %>
-        <% end %>
       </td>
     </tr>
   <%end%>
