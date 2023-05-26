@@ -1,6 +1,6 @@
 class RecipeFood < ApplicationRecord
-  belongs_to :recipes, class_name: 'Recipe'
-  belongs_to :foods, class_name: 'Food'
+  belongs_to :recipe
+  belongs_to :food
   validates :quantity, presence: true, numericality: { greater_than: 0 }
-  validates :foods, uniqueness: { scope: :recipes_id }
+  validates :recipe_id, uniqueness: { scope: :food_id }
 end
