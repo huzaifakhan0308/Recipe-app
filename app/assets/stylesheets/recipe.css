@@ -62,3 +62,11 @@
   font-family: "Philosopher", sans-serif;
   list-style: none;
 }
+
+.sum_amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  font-size: 20px;
+}
