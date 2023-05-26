@@ -1,0 +1,53 @@
+.recipes-title :nth-child(2) {
+  font-size: 22px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.recipe-link a {
+  background: #fff;
+  padding: 10px 5px;
+  border: 1px solid #282828;
+  border-radius: 5px;
+  color: #282828;
+  text-decoration: none;
+}
+
+.recipes-title a:link {
+  text-decoration: none;
+}
+
+.food-title {
+  font-family: "Philosopher", sans-serif;
+  margin: -20px auto 10px auto;
+  font-size: 40px;
+}
+
+#recipe-details {
+  display: flex;
+  gap: 50px;
+  margin-left: -139px;
+}
+
+#recipe-details p {
+  margin: 25px 20px;
+  width: 150%;
+}
+
+.checkbox {
+  margin: 20px 15px;
+  margin-left: 65%;
+}
+
+.recipe-link {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.recipe-link a:hover {
+  background: #282828;
+  color: #fff;
+  box-shadow: 4px 4px 7px #4e4e4e;
+}

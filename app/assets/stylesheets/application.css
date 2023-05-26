@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap');
 @import "recipe.css";
 @import "foods.css";
+@import "recipe_details.css";
 
 *,
 *::after,
