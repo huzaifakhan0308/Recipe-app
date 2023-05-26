@@ -10,7 +10,7 @@
                 <li><%= recipe.description%></li>
             </ul>
         <% end %>
-        <%= link_to 'Delete', recipe_path(recipe), data: {
+        <%= link_to 'Remove', recipe_path(recipe), data: {
                                 turbo_method: :delete,
                                 turbo_confirm: "Are you sure?"
                             }  %>

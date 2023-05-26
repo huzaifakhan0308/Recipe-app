@@ -1,12 +1,8 @@
 class RecipeFoodsController < ApplicationController
+  before_action :authenticate_user!, except: [:public_recipes]
   def new
     @recipe = current_user.recipes.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
-  end
-
-  def general_shopping_lists
-    @recipe_food = RecipeFood.includes(:food)
-    @food_count = RecipeFood.select(:food_id).distinct.count
   end
 
   def create

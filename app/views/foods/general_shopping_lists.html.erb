@@ -1,0 +1,32 @@
+<div class="mt-4 col-md-9 mx-auto">
+    <div class=" text-center mb-5">
+        <h2>Shopping List</h2>
+    </div>
+
+    <div class="d-flex justify-content-between mb-5">
+        <h5>Amount of food items to buy: <%=  @total_food_items %></h5>
+        <h5>Total value of food needed: <%= @total_food_items > 0 ? number_to_currency(@total) : '$0' %></h5>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Total price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @total_food_items > 0 %>
+                <% @shopping_list.each do |food| %>
+                <% total = food.total_quantity - food.food_quantity %>
+                <tr>
+                    <td><%= food.name %></td>
+                    <td><%= total %></td>
+                    <td><%= number_to_currency(total * food.price) %></td>
+                </tr>
+                <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>

@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:public_recipes]
 
   def index
     @foods = current_user.foods
@@ -29,6 +29,19 @@ class FoodsController < ApplicationController
     else
       redirect_to foods_path, alert: 'Oops something went wrong'
     end
+  end
+
+  def general_shopping_lists
+    @shopping_list = Food.select('foods.name', 'SUM(recipe_foods.quantity) AS total_quantity',
+                                 'foods.quantity AS food_quantity', 'foods.price')
+      .joins(recipe_foods: :recipe)
+      .where(users_id: current_user.id)
+      .group('foods.name, foods.quantity, foods.price')
+      .having('SUM(recipe_foods.quantity) > foods.quantity')
+
+    @total_food_items = @shopping_list.length
+
+    @total = @shopping_list.sum { |food| (food.total_quantity - food.food_quantity) * food.price }
   end
 
   private

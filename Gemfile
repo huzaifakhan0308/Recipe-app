@@ -72,3 +72,9 @@ group :test do
 end
 
 gem 'devise'
+
+gem 'cancancan'
+
+gem 'rspec-rails', '~> 4.0'
+
+gem 'rails-controller-testing'
