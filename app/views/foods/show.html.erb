@@ -1,0 +1,29 @@
+<div class="add-btn">
+    <%= link_to({ controller: "foods", action: "new"}) do %>
+        <%= link_to "Add food", new_food_path, class: "btn_new_food" %>
+    <% end %>
+</div>
+
+<table id="foods">
+    <tr>
+      <th>Food</th>
+      <th>Maesurment unit</th>
+      <th>Unit Price</th>
+      <th>Actions</th>
+    </tr>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td class="table_data"><%= food.name %></td>
+        <td class="table_data"><%= food.measurement_unit %></td>
+        <td class="table_data"><%= food.price %></td>
+        <td class="table_data">
+          <%= link_to 'Delete', food_path(food), data: {
+                                turbo_method: :delete,
+                                turbo_confirm: "Are you sure?"
+                            }  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

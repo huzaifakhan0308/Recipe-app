@@ -1,0 +1,38 @@
+<div class="recipe-container">
+  <div class="food-title">Recipe #id <%= @recipe.id%> </div>
+  <%= render @recipe%>
+  </div>
+  <div class="recipe-link">
+      <%= link_to 'Generate shopping list', general_shopping_lists_path %>
+
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id)%>
+  </div>
+  <hr class="my-5">
+  <div class="col-md-8 mx-auto">
+    <table class="table table-bordered table-striped">
+  <thead class="table-light">
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <%@recipe.recipe_foods.each do |recipe_food|%>
+    <tr>
+      <td><%=recipe_food.food.name%></td>
+      <td><%= "#{recipe_food.quantity} #{recipe_food.food.measurement_unit}"%></td>
+      <td><%=number_to_currency(recipe_food.food.price * recipe_food.quantity) %></td>
+      <td>
+        <% if can? :destroy, recipe_food %>
+            <%= link_to 'Remove', recipe_recipe_food_path(@recipe.id,recipe_food.id),class: "btn btn-sm btn-outline-danger bg-gradient", data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } %>
+        <% end %>
+      </td>
+    </tr>
+  <%end%>
+</table>
+  </div>
+</div>

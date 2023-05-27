@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap');
+@import "recipe.css";
+@import "foods.css";
+@import "recipe_details.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image:
+    linear-gradient(
+      to left,
+      rgb(223, 217, 217),
+      rgb(190, 190, 224)
+    );
+}
+
+#project-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}

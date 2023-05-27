@@ -1,0 +1,12 @@
+<h1 class="food_title">Public Recipes</h1>
+    <% @recipes.each do |recipe|  %>
+<div class="public_recipes">
+            <ul class='recipe_name'>
+                <li><%= recipe.name %></li>
+                <li>by: <%= recipe.users.name %></li>
+            </ul>
+            <ul class="recipe_total">
+                <li><%= recipe.description.truncate(30) %></li>
+            </ul>
+</div>
+    <% end %>
