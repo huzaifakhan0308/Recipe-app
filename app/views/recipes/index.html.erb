@@ -2,17 +2,17 @@
 <% @recipe.each_with_index do |recipe,index| %>
     <div class="recipes">
         <%= link_to recipe_path(recipe.id) do %>
-            <ul class="recipes-title" >
+            <ul class="recipes-links" >
                 <li>Recipe:<%= index + 1 %></li>
-                <li><%= recipe.name %></li>
-            </ul>
-            <ul class="recipes-desc">
-                <li><%= recipe.description%></li>
+                <li>
+                    <%= link_to 'Remove', recipe_path(recipe), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                }  %>
+                </li>
             </ul>
         <% end %>
-        <%= link_to 'Remove', recipe_path(recipe), data: {
-                                turbo_method: :delete,
-                                turbo_confirm: "Are you sure?"
-                            }  %>
+        <p class="recipes-desc"><%= recipe.description%></p>
+
     </div>
 <% end %>
