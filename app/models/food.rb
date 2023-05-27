@@ -6,4 +6,13 @@ class Food < ApplicationRecord
 
   belongs_to :users, class_name: 'User'
   has_many :recipe_foods, foreign_key: 'food_id', dependent: :destroy
+
+  def missing_foods
+    select('foods.name', 'SUM(recipe_foods.quantity) AS total_quantity',
+           'foods.quantity AS food_quantity', 'foods.price')
+      .joins(recipe_foods: :recipe)
+      .where(users_id: user.id)
+      .group('foods.name, foods.quantity, foods.price')
+      .having('SUM(recipe_foods.quantity) > foods.quantity')
+  end
 end
