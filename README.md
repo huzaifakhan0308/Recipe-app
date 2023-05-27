@@ -56,7 +56,7 @@ Example command:
 
 ```sh
   git clone https://github.com/huzaifakhan0308/Recipe-app.git
-  cd blog_app
+  cd Recipe-app
 
 ```
 
@@ -65,7 +65,7 @@ Example command:
 Example command:
 
 ```sh
-  cd blog_app
+  cd Recipe-app
   bundle install (install all dependencies)
 
 ```
