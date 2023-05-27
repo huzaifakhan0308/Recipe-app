@@ -69,6 +69,15 @@ Example command:
   bundle install (install all dependencies)
 
 ```
+### Database creation
+Next, use the following to create database and migrate
+```sh
+  rails db:create
+  rails db:migrate
+```
+
+
+
 ### Usage
 
 To run the project redirecting to the root directory of the project and run the following command:
