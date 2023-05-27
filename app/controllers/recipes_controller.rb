@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:public_recipes]
   def index
     @recipe = Recipe.all
   end
