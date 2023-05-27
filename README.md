@@ -15,9 +15,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📰 Blog App <a name="about-project"></a>
+# 📰 Recipe App <a name="about-project"></a>
 
-> A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> "Recipe-App" ia a web application that keeps track of all your recipes and ingredients. It allows you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -26,10 +26,13 @@
 - <a href="https://www.ruby-lang.org/es/">ROR</a>
 - <a href="https://www.postgresql.org/">Postgresql</a>
 
-### Key Features <a name="key-features"></a>
+## Key Features <a name="key-features"></a>
 
-- ORM model
-- User, Comment, Post, and like model
+-  **Registered users will be able to create new foods and recipes..**
+- **Users will be able to Add Food.**
+- **Users will be able to Add Recipe..**
+- **Users will authenticated before login..**
+- **Users will be able to View Food and Recipe..**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -44,7 +47,7 @@ In order to run this project you need:
 
 - Command line or terminal
 - IDE such as VsCode.
-- Rails needs to be installed on your system.
+- Ruby and ROR needs to be installed on your system.
 
 ### Setup
 
@@ -52,8 +55,8 @@ Clone this repository to your desired folder:
 Example command:
 
 ```sh
-  git clone https://github.com/huzaifakhan0308/blogsVault.git
-  cd blog_app
+  git clone https://github.com/huzaifakhan0308/Recipe-app.git
+  cd Recipe-app
 
 ```
 
@@ -62,7 +65,7 @@ Example command:
 Example command:
 
 ```sh
-  cd blog_app
+  cd Recipe-app
   bundle install (install all dependencies)
 
 ```
@@ -101,16 +104,16 @@ To test the web app run the following command:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- [Validations and Model specs.]
+- **Add payment feature.**
+- **Intergrate with Frontend languages.**
+- **Deploy to heroku.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/huzaifakhan0308/blogsVault/issues).
+Feel free to check the [issues page](https://github.com/huzaifakhan0308/Recipe-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,7 +125,8 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank microverse community for the support and guidance.
+I would like to thank...
+[Microverse](https://www.microverse.org/) for the oppotunity
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
